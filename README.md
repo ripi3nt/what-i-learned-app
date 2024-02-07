@@ -21,7 +21,7 @@ For the past year or so, I have been on a self-learning journey, during which I'
 
 ## Contribute
 
-This project is in early stages of development so any help would be appriciated
+This project is in early stages of development so any help would be appreciated
 
 ## Feedback
 
