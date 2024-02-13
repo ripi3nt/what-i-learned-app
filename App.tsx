@@ -1,14 +1,17 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import Home from "./screens/Home/Home";
 import Login from "./screens/Login/Login";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import { PlayfairDisplay_600SemiBold, useFonts } from "@expo-google-fonts/playfair-display";
 
 const Stack = createNativeStackNavigator();
 
 const App: React.FC = () => {
-  const hasToken: boolean = false;
+
+  const [fontsLoaded] = useFonts({
+      PlayfairDisplay_600SemiBold
+    });
 
   return (
     <NavigationContainer>
