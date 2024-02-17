@@ -28,7 +28,12 @@ const style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 8
-  }
+  },
+  imageButton: {
+    width: 34,
+    height: 34,
+    resizeMode: "cover"
+    }
 
 })
 
