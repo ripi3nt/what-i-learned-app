@@ -19,7 +19,7 @@ const Post: React.FC<PostProps> = (props: PostProps)=> {
       <View style={{gap: 4}}>
         <Text style={postStyle.title}>{props.title}</Text>
         <Text style={postStyle.username}>@{props.username}</Text>
-        <Text>{props.body}</Text>
+        <Text style={{fontFamily: "Poppins_400Regular"}}>{props.body}</Text>
       </View>
     </Pressable>
   )

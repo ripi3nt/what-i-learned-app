@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         <View style={globalStyles.header_container}>
           <Text style={style.title}>Feed</Text>
           <Pressable>
-            <Image source={require("../../assets/settings.png")}></Image>
+            <Image style={globalStyles.imageButton} source={require("../../assets/filter.png")}></Image>
           </Pressable>
         </View>
         <FlatList data={DATA} renderItem={({item})=>(<Post title={item.title} body={item.body} username={item.username} id={item.id}></Post>)}/>

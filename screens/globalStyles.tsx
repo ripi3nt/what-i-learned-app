@@ -19,7 +19,13 @@ const globalStyles= StyleSheet.create({
       borderBottomColor: "black",
       borderBottomWidth: 2,
       paddingBottom: 15,
+    },
+  imageButton: {
+    width: 34,
+    height: 34,
+    resizeMode: "cover"
     }
+
 
   })
 
