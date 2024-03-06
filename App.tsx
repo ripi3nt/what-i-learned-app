@@ -3,7 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import Home from "./screens/Home/Home";
 import Login from "./screens/Login/Login";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import { PlayfairDisplay_600SemiBold } from "@expo-google-fonts/playfair-display";
+import { PlayfairDisplay_600SemiBold, PlayfairDisplay_500Medium } from "@expo-google-fonts/playfair-display";
+import { Poppins_400Regular } from "@expo-google-fonts/poppins";
 import { useFonts } from "expo-font";
 import Signup from "./screens/Signup/Signup";
 import EmailVerificaition from "./screens/EmailVerification/EmailVerification";
@@ -16,7 +17,9 @@ const Stack = createNativeStackNavigator();
 const App: React.FC = () => {
 
   const [fontsLoaded] = useFonts({
-      PlayfairDisplay_600SemiBold
+      PlayfairDisplay_600SemiBold,
+      PlayfairDisplay_500Medium,
+      Poppins_400Regular
     });
 
   if(!fontsLoaded) {
