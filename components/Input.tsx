@@ -12,7 +12,7 @@ interface Props {
 const Input:React.FC<Props> = (props: Props) => {
   return(
     <View>
-        <Text>{props.name}</Text>
+        <Text style={{fontFamily: "Poppins_400Regular"}}>{props.name}</Text>
         <TextInput style={style.input} selectionColor={'black'} secureTextEntry={props.secure == undefined? false : props.secure} onChangeText={props.setValue}></TextInput>
     </View>
   )

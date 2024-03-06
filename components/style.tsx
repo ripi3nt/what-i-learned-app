@@ -11,6 +11,7 @@ const style = StyleSheet.create({
     color: "#000",
     paddingHorizontal: 15,
     marginTop: 10,
+    fontFamily: "Poppins_400Regular"
   },
   button: {
     backgroundColor: "#012622",
@@ -29,12 +30,11 @@ const style = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 8
   },
-  imageButton: {
-    width: 34,
-    height: 34,
-    resizeMode: "cover"
-    }
-
+  tag: {
+    fontFamily: "Poppins_400Regular",
+    color: "#8D8D8D",
+    fontSize: 16
+  }
 })
 
 export default style;

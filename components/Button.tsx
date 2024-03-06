@@ -12,7 +12,7 @@ const ButtonSmall:React.FC<Props> = (props: Props)=> {
 
     return(
     <Pressable style={props.fill? style.button : style.buttonEmpty} onPress={props.onPress}>
-      <Text style={props.fill ? { color: "#FAF9F6", fontFamily: "PlayfairDisplay_600SemiBold", fontSize: 16}: {color: "#000",fontFamily: "PlayfairDisplay_600SemiBold", fontSize: 16}}>{props.text}</Text>
+      <Text style={props.fill ? { color: "#FAF9F6", fontFamily: "Poppins_400Regular", fontSize: 16}: {color: "#000",fontFamily: "Poppins_400Regular", fontSize: 16}}>{props.text}</Text>
     </Pressable>
   )
 
