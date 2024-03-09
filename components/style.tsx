@@ -34,7 +34,18 @@ const style = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
     color: "#8D8D8D",
     fontSize: 16
-  }
+  },
+  filtersContainer: {
+    height: "60%",
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    backgroundColor: "white",
+    elevation: 30,
+    padding: 30,
+    justifyContent: "flex-start",
+    gap: 15
+    },
+
 })
 
 export default style;

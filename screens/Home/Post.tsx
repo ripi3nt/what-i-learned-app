@@ -11,7 +11,8 @@ export interface PostProps {
 
 const Post: React.FC<PostProps> = (props: PostProps)=> {
 
-  //TODO Styling
+  //TODO click on username -> profile of user
+  //TODO likes and comments
   const navigation = useNavigation();
 
   return(

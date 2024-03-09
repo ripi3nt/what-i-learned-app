@@ -25,7 +25,7 @@ const NewPost: React.FC = ()=> {
         <View style={{ padding: 30, borderColor: "black", borderWidth: 2, borderRadius: 30, width: "100%" }}>
           <TextInput value={title}  style={postStyle.title} placeholder="Title"></TextInput>
           <Text style={postStyle.username}>@username</Text>
-          <TextInput multiline={true} placeholder="Write your story here..."></TextInput>
+          <TextInput style={{minHeight: "20%"}} textAlignVertical={"top"} multiline={true} placeholder="Write your story here..."></TextInput>
         </View>
         <ButtonSmall text="Done" fill={true} onPress={onDone}></ButtonSmall>
       

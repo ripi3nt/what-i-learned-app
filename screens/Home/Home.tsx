@@ -1,10 +1,11 @@
-import React from "react";
-import { View, Text, Pressable, Image, FlatList, PushNotificationPermissions} from "react-native";
+import React, { useState } from "react";
+import { View, Text, Pressable, Image, FlatList, Modal} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import globalStyles from "../globalStyles";
 import style from "./style";
 import Post, {PostProps} from "./Post";
 import BottomBar from "../../components/BottomBar";
+import Filters from "../../components/Filters";
 
 
 const DATA: PostProps[]=[
@@ -37,14 +38,23 @@ const DATA: PostProps[]=[
 ]
 
 const Home: React.FC = () => {
-  //TODO 1 make pressable go to filter page or open filter menu
-  //TODO 2 fetch posts from API
+  //TODO Fill the filter menu
+  //TODO fetch posts from API
+  //TODO pull down -> refresh
+  
+  const [filtersVisible, setFiltersVisible] = useState(false);
+
+  const toggleFilters = ()=>{
+    setFiltersVisible(!filtersVisible);
+  }
+
   return (
     <SafeAreaView>
       <View style={[globalStyles.container, {justifyContent: "flex-start"}]}>
         <View style={globalStyles.header_container}>
+          <Filters isVisible={filtersVisible} toggleVisible={toggleFilters}></Filters>
           <Text style={style.title}>Feed</Text>
-          <Pressable>
+          <Pressable onPress={toggleFilters}>
             <Image style={globalStyles.imageButton} source={require("../../assets/filter.png")}></Image>
           </Pressable>
         </View>

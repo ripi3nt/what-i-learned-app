@@ -37,6 +37,8 @@ const DATA: PostProps[]=[
 ]
 
 const Profile: React.FC = () => {
+  //TODO fetch user post and most common tags
+
   return (
     <SafeAreaView>
       <View style={[globalStyles.container, {justifyContent: "flex-start", gap: 30}]}>
