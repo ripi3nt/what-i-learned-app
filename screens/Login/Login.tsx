@@ -6,6 +6,7 @@ import globalStyles from "../globalStyles";
 import Input from "../../components/Input";
 import ButtonSmall from "../../components/Button";
 import { CommonActions, useNavigation } from "@react-navigation/native";
+import colors from "../colors";
 
 const Login: React.FC = () => {
   const [ username, setUsername] = useState("");
@@ -33,7 +34,7 @@ const Login: React.FC = () => {
 
 
   return (
-    <SafeAreaView style={{backgroundColor: "#F2EFEB"}}>
+    <SafeAreaView style={{backgroundColor: colors.bg}}>
       <ImageBackground source={require('../../assets/paper-bg.jpg')} resizeMode="cover" style={{ height: "100%", width: "100%"}}>
       <View style={globalStyles.container}>
         <Text style={styles.title}>NWSY</Text>

@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../colors";
 
 const style = StyleSheet.create({
     title: {
@@ -15,7 +16,7 @@ export const postStyle = StyleSheet.create({
     },
     username: {
       fontSize: 16,
-      color: "#8D8D8D",
+      color: colors.gray,
       fontFamily: "Poppins_400Regular"
     }
   })

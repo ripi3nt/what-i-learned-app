@@ -1,20 +1,21 @@
 import { StyleSheet } from "react-native";
+import colors from "../screens/colors";
 
 const style = StyleSheet.create({
   input: {
-    backgroundColor: "#FAF9F6",
+    backgroundColor: colors.bg,
     width: 307,
     height: 43,
     borderRadius: 8,
-    borderColor: "#000",
+    borderColor: colors.fg,
     borderWidth: 1,
-    color: "#000",
+    color: colors.bg,
     paddingHorizontal: 15,
     marginTop: 10,
     fontFamily: "Poppins_400Regular"
   },
   button: {
-    backgroundColor: "#012622",
+    backgroundColor: colors.accent,
     height: 43,
     width: "45%",
     alignItems: "center",
@@ -22,7 +23,7 @@ const style = StyleSheet.create({
     borderRadius: 8
   },
   buttonEmpty: {
-    borderColor: "#012622",
+    borderColor: colors.accent,
     borderWidth: 1,
     height: 43,
     width: "45%",
@@ -32,7 +33,7 @@ const style = StyleSheet.create({
   },
   tag: {
     fontFamily: "Poppins_400Regular",
-    color: "#8D8D8D",
+    color: colors.gray,
     fontSize: 16
   },
   filtersContainer: {
