@@ -6,6 +6,12 @@ const style = StyleSheet.create({
       fontSize: 48,
       fontFamily: "PlayfairDisplay_500Medium"
     },
+    container: {
+      alignItems: "center",
+      justifyContent: "flex-start",
+      width: "100%",
+      height: "100%",
+    }
 
   })
 

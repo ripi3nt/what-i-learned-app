@@ -43,7 +43,7 @@ const Profile: React.FC = () => {
     <SafeAreaView>
       <View style={[globalStyles.container, {justifyContent: "flex-start", gap: 30}]}>
         <Header title="Profile"></Header>
-        <View style={{width: "100%"}}>
+        <View style={style.profileInfo}>
           <Text style={style.username}>Username</Text>
           <View style={{flexDirection: "row", gap: 20}}>
             <Tag text="stoicism"></Tag>
@@ -51,7 +51,7 @@ const Profile: React.FC = () => {
             <Tag text="school"></Tag>
           </View>
         </View>
-        <FlatList data={DATA} renderItem={({item})=>(<Post title={item.title} body={item.body} username={item.username} id={item.id}></Post>)}/>
+        <FlatList style={globalStyles.contentContainer} data={DATA} renderItem={({item})=>(<Post title={item.title} body={item.body} username={item.username} id={item.id}></Post>)}/>
 
         
         

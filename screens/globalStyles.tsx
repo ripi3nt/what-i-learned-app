@@ -6,7 +6,9 @@ const globalStyles= StyleSheet.create({
       justifyContent: "space-evenly",
       width: "100%",
       height: "100%",
-      paddingHorizontal: 43,
+    },
+    contentContainer: {
+      paddingHorizontal: 43
     },
     errorText: {
       color: "red"
@@ -19,6 +21,7 @@ const globalStyles= StyleSheet.create({
       borderBottomColor: "black",
       borderBottomWidth: 2,
       paddingBottom: 15,
+      paddingHorizontal: 43
     },
   imageButton: {
     width: 34,

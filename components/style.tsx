@@ -9,7 +9,7 @@ const style = StyleSheet.create({
     borderRadius: 8,
     borderColor: colors.fg,
     borderWidth: 1,
-    color: colors.bg,
+    color: colors.fg,
     paddingHorizontal: 15,
     marginTop: 10,
     fontFamily: "Poppins_400Regular"
@@ -46,6 +46,16 @@ const style = StyleSheet.create({
     justifyContent: "flex-start",
     gap: 15
     },
+  bottomBar: {
+    paddingHorizontal: 43,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width:"100%", 
+    height: 98,
+    borderTopColor:"black",
+    borderTopWidth:2, 
+    paddingTop: 30
+  }
 
 })
 

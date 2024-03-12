@@ -1,14 +1,14 @@
 import { Pressable, View, Image } from "react-native"
-import style from "./style";
 import { CommonActions, useNavigation } from "@react-navigation/native";
 import globalStyles from "../screens/globalStyles";
+import style from "./style";
 
 const BottomBar: React.FC = ()=> {
 
   const navigation = useNavigation();
 
   return (
-    <View style={{flexDirection: "row", justifyContent: "space-between" , width: "100%", height: 98, borderTopColor: "black", borderTopWidth: 2, paddingTop: 30}}>
+    <View style={style.bottomBar}>
       <Pressable onPress={()=>navigation.dispatch(CommonActions.navigate({name: "Home"}))}>
         <Image style={globalStyles.imageButton} source={require("../assets/newspaper.png")}></Image>
       </Pressable>

@@ -50,15 +50,15 @@ const Home: React.FC = () => {
 
   return (
     <SafeAreaView>
-      <View style={[globalStyles.container, {justifyContent: "flex-start"}]}>
-        <View style={globalStyles.header_container}>
+      <View style={style.container}>
+        <View style={[globalStyles.header_container, {paddingHorizontal: 43}]}>
           <Filters isVisible={filtersVisible} toggleVisible={toggleFilters}></Filters>
           <Text style={style.title}>Feed</Text>
           <Pressable onPress={toggleFilters}>
             <Image style={globalStyles.imageButton} source={require("../../assets/filter.png")}></Image>
           </Pressable>
         </View>
-        <FlatList data={DATA} renderItem={({item})=>(<Post title={item.title} body={item.body} username={item.username} id={item.id}></Post>)}/>
+        <FlatList style={{paddingHorizontal: 43}} data={DATA} renderItem={({item})=>(<Post title={item.title} body={item.body} username={item.username} id={item.id}></Post>)}/>
         <BottomBar></BottomBar>
       </View>
     </SafeAreaView>

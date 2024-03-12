@@ -7,6 +7,10 @@ const style = StyleSheet.create({
     color: colors.fg,
     fontSize: 24
   },
+  profileInfo: {
+    width: "100%",
+    paddingHorizontal: 43
+  }
   
   })
 

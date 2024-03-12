@@ -21,12 +21,14 @@ const EditPost: React.FC = () => {
     <SafeAreaView>
       <View style={[globalStyles.container, { justifyContent: "flex-start", alignItems: "flex-start", gap: 30 }]}>
         <Header title="Edit post"></Header>
-        <View style={{ padding: 30, borderColor: "black", borderWidth: 2, borderRadius: 30, width: "100%" }}>
-          <TextInput style={postStyle.title}>Lorem Ipsum</TextInput>
-          <Text style={postStyle.username}>@username</Text>
-          <TextInput multiline={true} >Etiam risus magna, molestie ut turpis a, pellentesque mattis sem. Integer id egestas lacus. Fusce congue diam dolor, vel mollis nibh elementum sed. Etiam imperdiet felis id urna efficitur imperdiet. Curabitur vel rhoncus sem. Aliquam erat volutpat. Aenean viverra magna in risus commodo pretium. </TextInput>
-        </View>
-        <ButtonSmall text="Done" fill={true} onPress={onDone}></ButtonSmall>
+          <View style={{paddingHorizontal: 43, gap: 30, alignItems: "flex-start", justifyContent: "flex-start", width: "100%"}}>
+          <View style={{ padding: 30, borderColor: "black", borderWidth: 2, borderRadius: 30, width: "100%" }}>
+            <TextInput style={postStyle.title}>Lorem Ipsum</TextInput>
+            <Text style={postStyle.username}>@username</Text>
+            <TextInput multiline={true} >Etiam risus magna, molestie ut turpis a, pellentesque mattis sem. Integer id egestas lacus. Fusce congue diam dolor, vel mollis nibh elementum sed. Etiam imperdiet felis id urna efficitur imperdiet. Curabitur vel rhoncus sem. Aliquam erat volutpat. Aenean viverra magna in risus commodo pretium. </TextInput>
+          </View>
+          <ButtonSmall text="Done" fill={true} onPress={onDone}></ButtonSmall>
+          </View>
       </View>
     </SafeAreaView>
   )

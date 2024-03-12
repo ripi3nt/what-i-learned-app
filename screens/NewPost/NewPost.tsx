@@ -22,12 +22,14 @@ const NewPost: React.FC = ()=> {
     <SafeAreaView>
       <View style={[globalStyles.container, { justifyContent: "flex-start", alignItems: "flex-start", gap: 30 }]}>
         <Header title="New Post"></Header>
+        <View style={{paddingHorizontal: 43, gap: 30, alignItems: "flex-start", justifyContent: "flex-start", width: "100%"}}>
         <View style={{ padding: 30, borderColor: "black", borderWidth: 2, borderRadius: 30, width: "100%" }}>
           <TextInput value={title}  style={postStyle.title} placeholder="Title"></TextInput>
           <Text style={postStyle.username}>@username</Text>
           <TextInput style={{minHeight: "20%"}} textAlignVertical={"top"} multiline={true} placeholder="Write your story here..."></TextInput>
         </View>
         <ButtonSmall text="Done" fill={true} onPress={onDone}></ButtonSmall>
+        </View>
       
 
       </View>
