@@ -4,6 +4,7 @@ import Input from './Input';
 import ButtonSmall from './Button';
 import { useState } from 'react';
 import Tag from './Tag';
+import SwipeDownView from '../components/SwipeDownContainer';
 
 interface FiltersProps {
   isVisible: boolean;
@@ -27,6 +28,7 @@ const Filters: React.FC<FiltersProps> = (props: FiltersProps)=>{
 
   return (
       <Modal animationType="slide" visible={props.isVisible} onRequestClose={props.toggleVisible} transparent={true}>
+        <SwipeDownView onSwipeDown={props.toggleVisible}>
         <Pressable style={{height: "40%"}} onPress={props.toggleVisible}></Pressable>
         <View style={style.filtersContainer}>
           <Text style={{fontFamily: "PlayfairDisplay_500Medium", fontSize: 24 }}>Filters</Text>
@@ -39,6 +41,7 @@ const Filters: React.FC<FiltersProps> = (props: FiltersProps)=>{
           </View>
           <ButtonSmall text='Add' fill={true} onPress={addTag}></ButtonSmall>
         </View>
+        </SwipeDownView>
       </Modal>
 
   )
