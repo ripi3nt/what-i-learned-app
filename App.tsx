@@ -11,6 +11,7 @@ import EmailVerificaition from "./screens/EmailVerification/EmailVerification";
 import Profile from "./screens/Profile/Profile";
 import NewPost from "./screens/NewPost/NewPost";
 import EditPost from "./screens/EditPost/EditPost";
+import { ActivityIndicator } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,7 @@ const App: React.FC = () => {
   if(!fontsLoaded) {
     return (
       <>
+        <ActivityIndicator></ActivityIndicator>
       </>
     )
   }
