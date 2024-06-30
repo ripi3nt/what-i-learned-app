@@ -7,9 +7,7 @@ interface TagProp {
 
 const Tag: React.FC<TagProp> = (props: TagProp)=> {
   return (
-  <>
     <Text style={style.tag}>{props.text}</Text>
-  </>
   )
 }
 

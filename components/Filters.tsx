@@ -13,8 +13,8 @@ interface FiltersProps {
 
 const Filters: React.FC<FiltersProps> = (props: FiltersProps)=>{
   const [username, setUsername] = useState("");
-  const [tag, setTag] = useState("");
-  const [tags, setTags] = useState([""]);
+  const [tag, setTag] = useState<string>("");
+  const [tags, setTags] = useState<string[]>([]);
 
 
   const addTag = () => {

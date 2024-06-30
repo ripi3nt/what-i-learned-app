@@ -1,4 +1,4 @@
-import { View, Text} from "react-native"
+import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
 import globalStyles from "../globalStyles";
@@ -6,58 +6,86 @@ import Post, { PostProps } from "../Home/Post";
 import { FlatList } from "react-native";
 import style from "./style";
 import Tag from "../../components/Tag";
+import { ProfileProps } from "../../global/types";
+import { useContext, useEffect, useState } from "react";
+import apiurl from "../../constants/api";
+import AppContext from "../../global/globalContext";
+import LikesCache from "../../global/likesCache";
 
-const DATA: PostProps[]=[
-{
-  id: "1",
-  title: "Lorem",
-  username: "username",
-  body: "Etiam risus magna, molestie ut turpis a, pellentesque mattis sem. Integer id egestas lacus. Fusce congue diam dolor, vel mollis nibh elementum sed. Etiam imperdiet felis id urna efficitur imperdiet. Curabitur vel rhoncus sem. Aliquam erat volutpat. Aenean viverra magna in risus commodo pretium."
-},
-{
-  id: "2",
-  title: "Lorem",
-  username: "username",
-  body: "Etiam risus magna, molestie ut turpis a, pellentesque mattis sem. Integer id egestas lacus. Fusce congue diam dolor, vel mollis nibh elementum sed. Etiam imperdiet felis id urna efficitur imperdiet. Curabitur vel rhoncus sem. Aliquam erat volutpat. Aenean viverra magna in risus commodo pretium."
-},
-{
-  id: "3",
-  title: "Lorem",
-  username: "username",
-  body: "Etiam risus magna, molestie ut turpis a, pellentesque mattis sem. Integer id egestas lacus. Fusce congue diam dolor, vel mollis nibh elementum sed. Etiam imperdiet felis id urna efficitur imperdiet. Curabitur vel rhoncus sem. Aliquam erat volutpat. Aenean viverra magna in risus commodo pretium."
-},
-{
-  id: "4",
-  title: "Lorem",
-  username: "username",
-  body: "Etiam risus magna, molestie ut turpis a, pellentesque mattis sem. Integer id egestas lacus. Fusce congue diam dolor, vel mollis nibh elementum sed. Etiam imperdiet felis id urna efficitur imperdiet. Curabitur vel rhoncus sem. Aliquam erat volutpat. Aenean viverra magna in risus commodo pretium."
-},
-
-
-]
-
-const Profile: React.FC = () => {
+const Profile: React.FC<ProfileProps> = ({
+  route,
+  navigation,
+}: ProfileProps) => {
   //TODO fetch user post and most common tags
+
+  const [posts, setPosts] = useState<PostProps[] | null>(null);
+  const [error, setError] = useState("");
+
+  const ctx = useContext(AppContext);
+
+  const cachedLikes = useContext(LikesCache);
+
+  const username = route.params?.username ? route.params?.username : ctx.username;
+
+  const addLikeToCache = (postid: number) => {
+      cachedLikes.push(postid)
+    };
+
+
+  const fetchUserPosts = () => {
+    fetch(apiurl + "/profile", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Bearer":  ctx.token},
+      body: JSON.stringify({ username: username }),
+    })
+    .then(res => {
+      if(res.status == 200) return res.json();
+      setError("There was an error while trying to get the user's posts");
+      })
+    .then(data => {
+      setPosts(data);
+      });
+  };
+
+  useEffect(() => {
+    fetchUserPosts();
+    }, []);
 
   return (
     <SafeAreaView>
-      <View style={[globalStyles.container, {justifyContent: "flex-start", gap: 30}]}>
+      <View
+        style={[
+          globalStyles.container,
+          { justifyContent: "flex-start", gap: 30 },
+        ]}
+      >
         <Header title="Profile"></Header>
         <View style={style.profileInfo}>
-          <Text style={style.username}>Username</Text>
-          <View style={{flexDirection: "row", gap: 20}}>
+          <Text style={style.username}>{username}</Text>
+          <View style={{ flexDirection: "row", gap: 20 }}>
             <Tag text="stoicism"></Tag>
             <Tag text="gym"></Tag>
             <Tag text="school"></Tag>
           </View>
         </View>
-        <FlatList style={globalStyles.contentContainer} data={DATA} renderItem={({item})=>(<Post title={item.title} body={item.body} username={item.username} id={item.id}></Post>)}/>
-
-        
-        
+        <FlatList
+          data={posts}
+          contentContainerStyle={[globalStyles.contentContainer, {padding: 0}]}
+          renderItem={({ item }) => (
+            <Post
+              title={item.title}
+              body={item.body}
+              username={item.username}
+              id={item.id}
+              navigation={navigation}
+              likes={item.likes}
+              likePost={addLikeToCache}
+            ></Post>
+          )}
+        />
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 export default Profile;
